@@ -1,0 +1,148 @@
+\renewcommand*{\thesection}{\Roman{section}.}
+\renewcommand*{\thesubsection}{\arabic{subsection}.}
+\renewcommand*{\thesubsubsection}{\alph{subsubsection}.}
+
+% Commands for size-adaptative parentheses, brackets, curly brackets, absolute value and magnitude.
+\newcommand{\paren}[1]{\left(#1\right)} % (x)
+\newcommand{\croch}[1]{\left[#1\right]} % [x]
+\newcommand{\accol}[1]{\left\lbrace#1\right\rbrace} % {x}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} % |x|
+\newcommand{\norme}[1]{\left\|#1\right\|} % ||x||
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % ⌊x⌋
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil} % ⌈x⌉
+
+% Commands for size-adaptative intervals and integer intervals. The commands' roots are "interv" and "interventier" and the added e or i at the end mean "excluded" and "included" respectively.
+\newcommand{\intervii}[2]{\left[#1;#2\right]} % [a;b]
+\newcommand{\intervee}[2]{\left]#1;#2\right[} % ]a;b[
+\newcommand{\intervie}[2]{\left[#1;#2\right[} % [a;b[
+\newcommand{\intervei}[2]{\left]#1;#2\right]} % ]a;b]
+\newcommand{\interventierii}[2]{\left\llbracket#1;#2\right\rrbracket} % non-ASCII characters needed
+\newcommand{\interventieree}[2]{\left\rrbracket#1;#2\right\llbracket} % non-ASCII characters needed
+\newcommand{\interventierie}[2]{\left\llbracket#1;#2\right\llbracket} % non-ASCII characters needed
+\newcommand{\interventierei}[2]{\left\rrbracket#1;#2\right\rrbracket} % non-ASCII characters needed
+
+% Commands for usually used sets.
+\newcommand{\N}{\mathbb{N}} % natural integers
+\newcommand{\Ns}{\mathbb{N}^*}
+
+\newcommand{\Z}{\mathbb{Z}} % relative integers
+\newcommand{\Zp}{\mathbb{Z}_+}
+\newcommand{\Zs}{\mathbb{Z}^*}
+\newcommand{\Zps}{\mathbb{Z}_+^*}
+
+\newcommand{\D}{\mathbb{D}} % decimal numbers
+\newcommand{\Dp}{\mathbb{D}_+}
+\newcommand{\Dm}{\mathbb{D}_-}
+\newcommand{\Ds}{\mathbb{D}^*}
+\newcommand{\Dps}{\mathbb{D}_+^*}
+\newcommand{\Dms}{\mathbb{D}_-^*}
+
+\newcommand{\Q}{\mathbb{Q}} % rational numbers
+\newcommand{\Qp}{\mathbb{Q}_+}
+\newcommand{\Qm}{\mathbb{Q}_-}
+\newcommand{\Qs}{\mathbb{Q}^*}
+\newcommand{\Qps}{\mathbb{Q}_+^*}
+\newcommand{\Qms}{\mathbb{Q}_-^*}
+
+\newcommand{\R}{\mathbb{R}} % real numbers
+\newcommand{\Rp}{\mathbb{R}_+}
+\newcommand{\Rm}{\mathbb{R}_-}
+\newcommand{\Rs}{\mathbb{R}^*}
+\newcommand{\Rps}{\mathbb{R}_+^*}
+\newcommand{\Rms}{\mathbb{R}_-^*}
+\newcommand{\Rb}{\overline{\mathbb{R}}}
+
+\newcommand{\C}{\mathbb{C}} % complex numbers
+\newcommand{\Cs}{\mathbb{C}^*}
+
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Ks}{\mathbb{K}^*}
+
+\newcommand{\A}{\mathbb{A}}
+\renewcommand{\L}[2]{\mathscr{L}\paren{#1,#2}}
+\newcommand{\Lendo}[1]{\mathscr{L}\paren{#1}}
+
+\newcommand{\prem}{\mathbb{P}}
+
+\newcommand{\U}{\mathbb{U}} % complex numbers whose modulus is 1
+
+\renewcommand{\P}[1]{\mathscr{P}\paren{#1}} % subsets of a set
+\newcommand{\Pf}[1]{\mathscr{P}_f\paren{#1}} % finite subsets of a set
+\newcommand{\F}[2]{\mathscr{F}\paren{#1,#2}} % functions from 1 to 2
+\newcommand{\V}[1]{\mathscr{V}\paren{#1}} % neighborhood of a number
+
+% Redefines \Re and \Im to print Re and Im (the same way as ln or lim) instead of fraktur R and I which don't look nice and are less readable.
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Card}{\operatorname{Card}}
+
+% Command to print an upright e for the exponential instead of a slanted e and put the exponent.
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+
+% Command to print the imaginary i with a little space on the right. This way, the exponents don't look confusing. \i normally prints a dotless i.
+\renewcommand{\i}{i\mkern1mu}
+
+% Command for a QED black square. It automatically prints a whitespace before the square such that it looks nice.
+\newcommand{\cqfd}{\text{ }\blacksquare}
+
+% Commands with more explicit names for the best way to express divisibility (mid and nmid).
+\newcommand{\divise}{\mid}
+\newcommand{\notdivise}{\nmid}
+
+% Commands that do the exact same thing but with explicit names for a complex number's conjugate and an event's negation in probability.
+\newcommand{\conj}[1]{\overline{#1}}
+
+% Command for a size-adaptative middle bar meaning "such that" (with spacing around it in order to look nice).
+\newcommand{\tq}{\;\middle|\;}
+
+% Command with an explicit name for the scalar product.
+\newcommand{\scal}{\cdot}
+\newcommand{\vecto}{\operatorname{_\wedge}}
+
+% Shortcut for forcing displaystyle in inline mode.
+\newcommand{\ds}{\displaystyle}
+
+% Make the not version of implies, impliedby and iff look nice.
+\newcommand{\notimp}{\centernot{\imp}}
+\newcommand{\notimpr}{\centernot{\impr}}
+\newcommand{\notssi}{\centernot{\ssi}}
+
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\supset}{\supseteq}
+\newcommand{\notsubset}{\centernot{\subset}}
+\newcommand{\notsupset}{\centernot{\supset}}
+
+% More explicit names for land (logical and) and lor (logical or).
+\newcommand{\et}{\land}
+\newcommand{\ou}{\lor}
+\newcommand{\non}{\lnot}
+
+\renewcommand{\to}{\longrightarrow}
+\renewcommand{\mapsto}{\longmapsto}
+
+\newcommand{\fonction}[5]{\begin{array}[t]{cccc}#1 : & #2 & \to & #3 \\ & #4 & \mapsto & #5\end{array}}
+\newcommand{\fonctionlambda}[4]{\begin{array}[t]{ccc}#1 & \to & #2 \\ #3 & \mapsto & #4\end{array}}
+\newcommand{\fonctionnd}[3]{\begin{array}[t]{ccc}#1 : & #2 \to & #3\end{array}}
+
+\newtheoremstyle{theo}% 〈name〉
+{3pt}% 〈Space above〉1
+{3pt}% 〈Space below 〉1
+{}% 〈Body font〉
+{}% 〈Indent amount〉2
+{\bfseries}% 〈Theorem head font〉
+{\newline \bfseries}% 〈Punctuation after theorem head 〉
+{.5em}% 〈Space after theorem head 〉3
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
+
+\newcounter{num}
+\setcounter{num}{0}
+\theoremstyle{theo}
+\newtheorem{prop}[num]{Proposition}
+\newtheorem{demo}[num]{Démonstration}
+\newtheorem{theo}[num]{Théorème}
+\newtheorem{defi}[num]{Définition}
+\newtheorem{lem}[num]{Lemme}
+\newtheorem{cor}[num]{Corollaire}
+\newtheorem{ex}[num]{Exemple}
+\newtheorem{rem}[num]{Remarque}
+\newtheorem{cons}[num]{Conséquence}
