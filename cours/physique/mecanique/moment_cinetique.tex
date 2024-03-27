@@ -4,34 +4,34 @@
 On s'interesse tout d'abord à un point matériel $M$ de masse $m$ 
 et animé de la vitesse $\vec{v}_{R}$ dans un référentiel $R$. 
 \newline
-\begin{defi}[quantité de mouvement]
+\begin{definition}[quantité de mouvement]
     La quantité de mouvement du point $M$ est: \[\vec{p}_{R} = m \cdot \vec{v}_{R}\]
-\end{defi}
+\end{definition}
 
-\begin{defi}[moment cinétique par rapport à un point]
+\begin{definition}[moment cinétique par rapport à un point]
     Le moment cinétique du point $M$ par rapport au point $O$ est:
     \[\vec{L_{O}}(M) = \vec{OM} \wedge \vec{p}\]
     $\vec{L_{O}}(M)$ s'exprime en $kg \cdot m^{2} \cdot s^{-1}$ 
     et est orthogonal à $\vec{OM}$ et $\vec{v}$
-\end{defi}
+\end{definition}
 
 \begin{rem}
     On peut faire un changement d'origine d'un point $O$ vers un point $O'$:
     \[\vec{L_{O'}}(M) = \vec{O'O} \wedge m\vec{v} + \vec{L_{O}}(M)\]
 \end{rem}
 
-\begin{defi}[moment cinétique par rapport à un axe]
+\begin{definition}[moment cinétique par rapport à un axe]
     Soit un axe $\Delta$ dirigé par un vecteur unitaire $\vec{u}$.
     \newline
     On définit le moment cinétique $L_{\Delta}(M)$ du point $M$ par rapport à l'axe
     $\Delta$ par:
     \[L_{\Delta}(M) = \vec{L_{O}}(M) \cdot \vec{u}\]
-\end{defi}
+\end{definition}
 
 
 \subsection{Moment d'une force}
 
-\begin{defi}[moment d'une force par rapport à un point]
+\begin{definition}[moment d'une force par rapport à un point]
     Le moment de la force $\vec{F}$ qui s'exerce au point $M$ 
     par rapport au point $O$ est donnée par la relation:
     \[\vec{M_{O}}(\vec{F}) = \vec{OM} \wedge \vec{F}\]
@@ -40,14 +40,14 @@ et animé de la vitesse $\vec{v}_{R}$ dans un référentiel $R$.
     Cela traduit la capacité de la force $\vec{F}$ à faire tourner
     le point $M$ autour du point $O$.
     C'est toujours possible sauf si $\vec{F}$ est colinéaire à $\vec{OM}$
-\end{defi}
+\end{definition}
 
 \begin{rem}
     On peut faire un changement d'origine d'un point $O$ vers un point $O'$:
     \[\vec{M_{O'}}(\vec{F}) = \vec{O'O} \wedge \vec{F} + \vec{M_{O}}(\vec{F})\]
 \end{rem}
 
-\begin{defi}[moment d'une force par rapport à un axe]
+\begin{definition}[moment d'une force par rapport à un axe]
     Soit un axe $\Delta$ dirigé par un vecteur unitaire $\vec{u}$. 
     \newline
     On définit le moment d'une force $M_{\Delta}(\vec{F})$ du point $M$ par rapport à l'axe
@@ -58,7 +58,7 @@ et animé de la vitesse $\vec{v}_{R}$ dans un référentiel $R$.
     Cela traduit la capacité de la force $\vec{F}$ à faire tourner
     le point $M$ autour de l'axe $\Delta$.
     C'est toujours possible sauf si $\vec{F}$ et $\vec{OM}$ sont coplanaire.
-\end{defi}
+\end{definition}
 
 \begin{rem}
     $M_{\Delta}(\vec{F})$ est indépendant du choix du point sur l'axe $\Delta$.
@@ -71,14 +71,14 @@ TODO
 
 \subsection{Théorème du moment cinétique}
 
-\begin{theo}[théorème du moment cinétique vectoriel]
+\begin{theorem}[théorème du moment cinétique vectoriel]
 Soit $O$ un point fixe du reférentiel $R$ galiléen.
 \newline
 Soit $M$ un point materiel du masse $m$, animé de la vitesse $\vec{v}$ et soumis
 a un ensemble de forces $\sum_{i}\vec{f_{i}}$.
 On a:
 \[\frac{d\vec{L_{O}}(M)}{dt} = \sum_{i} \vec{M_{O}}(\vec{F_{i}})\]
-\end{theo}
+\end{theorem}
 
 \begin{demo}
     On démontre le théorème du moment cinétique vectoriel:
@@ -96,11 +96,11 @@ On a:
     
 \end{demo}
 
-\begin{theo}[théorème du moment cinétique scalaire]
+\begin{theorem}[théorème du moment cinétique scalaire]
     On projete le théorème du moment cinétique sur un axe dirigé
     par le vecteur unitaire $\vec{u}$:
     \[\frac{dL_{\Delta}(M)}{dt} = \sum_{i} M_{\Delta}(\vec{F_{i}})\]
-\end{theo}
+\end{theorem}
 
 \begin{ex}
     On peut appliquer le théorème du moment cinétique sur un pendule simple ou 
@@ -111,10 +111,10 @@ On a:
 \subsection{Cas des forces centrales}
 \subsubsection{Définition}
 
-\begin{defi}[force centrale]
+\begin{definition}[force centrale]
     Une force $\vec{F}$ est dite centrale si sa droite support passe 
     en permanance par le point fixe $O$.
-\end{defi}
+\end{definition}
 
 \begin{cons}
     Le moment de la force $\vec{F}$ est donc nul:

@@ -124,9 +124,9 @@
 \newcommand{\fonctionlambda}[4]{\begin{array}[t]{ccc}#1 & \to & #2 \\ #3 & \mapsto & #4\end{array}}
 \newcommand{\fonctionnd}[3]{\begin{array}[t]{ccc}#1 : & #2 \to & #3\end{array}}
 
-\newtheoremstyle{theo}% 〈name〉
-{3pt}% 〈Space above〉1
-{3pt}% 〈Space below 〉1
+\newtheoremstyle{customStyle}% 〈name〉
+{\topsep}% 〈Space above〉1
+{\topsep}% 〈Space below 〉1
 {}% 〈Body font〉
 {}% 〈Indent amount〉2
 {\bfseries}% 〈Theorem head font〉
@@ -136,13 +136,21 @@
 
 \newcounter{num}
 \setcounter{num}{0}
-\theoremstyle{theo}
-\newtheorem{prop}[num]{Proposition}
+\theoremstyle{customStyle}
+
+\newtheorem{proposition}[num]{Proposition}
 \newtheorem{demo}[num]{Démonstration}
-\newtheorem{theo}[num]{Théorème}
+\newtheorem{theorem}[num]{Théorème}
 \newtheorem{definition}[num]{Définition}
-\newtheorem{lem}[num]{Lemme}
+
+\newtheorem{lemma}[num]{Lemme}
 \newtheorem{cor}[num]{Corollaire}
 \newtheorem{ex}[num]{Exemple}
 \newtheorem{rem}[num]{Remarque}
 \newtheorem{cons}[num]{Conséquence}
+
+\renewenvironment{proof}{\textit{Démonstration} \quad}{\qed}
+
+%\newenvironment{defmy}
+%    {\textcolor[gray]{0.7} \begin{leftbar}\begin{demo}}
+%    {\end{demo}\end{leftbar}}

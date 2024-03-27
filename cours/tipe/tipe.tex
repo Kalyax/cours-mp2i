@@ -1,6 +1,4 @@
-\section{TIPE}
-
-\subsection{Notes}
+\section{Notes}
 
 Nullstellensatz: (démo?)
 \begin{itemize}
@@ -23,18 +21,9 @@ Projectif/Affine:?
 \mbox{}
 
 
-\subsection{Idéaux}
-
-\begin{definition}[idéal d'un anneau]
-    Soit $A$ un anneau. Un sous-ensemble $I \subset A$ est un idéal de A si:
-    \begin{itemize}
-        \item $(I, +)$ est un sous groupe de $(A, +)$
-        \item $\forall a \in A, \forall b \in I, ab = ba \in I$
-    \end{itemize}
-\end{definition}
 
 
-\subsection{Anneaux quotients}
+\section{Rappels: relations d'équivalence}
 
 Soit E un ensemble et $\sim$ une relation sur E.
 
@@ -61,6 +50,80 @@ Soit E un ensemble et $\sim$ une relation sur E.
     \end{itemize}
 \end{definition}
 
+\begin{lemma}
+    Soient $x,y \in E$. On a:
+    \[ x \sim y \Longleftrightarrow \title{x} = \title{y} \]
+\end{lemma}
+
+\begin{proof}
+    tkt
+\end{proof}
+
+\begin{theorem}[parition formée par les classes d'équivalence]
+    L'ensemble des classes d'équivalences sous $\sim$ forme une parition de $E$.
+\end{theorem}
+
+\begin{proof}
+    
+\end{proof}
+
 \begin{definition}[ensemble quotient]
-    TODO
+    TODOf
 \end{definition}
+
+<application canonique>
+
+
+\section{Anneaux}
+
+\subsection{Remarques}
+
+\begin{definition}[anneau quotient]
+    Soient $A$ un anneau et $I$ un idéal bilatère (idéal à gauche et à droite) de $A$.
+    On définit la relation d'équivalence $\mathscr{R}$ suivante:
+
+    \[ \forall x, y \in A, x \mathscr{R} y \Longleftrightarrow x - y \in I \]
+
+    On dit aussi alors que $x$ et $y$ sont congrus modulo $I$: $x \equiv y \mod I$
+
+    On peut munir l'ensemble quotient $A/I$ (càd l'ensemble des classes d'équivalence sur A) des lois induites par I:
+    \[ \begin{array}{lcr}
+        \fonction{+}{t}{a}{e}{f} & \text{et} & \fonction{\cdot}{t}{a}{e}{f}
+    \end{array} \]
+
+    $A/I$ est muni d'une structure d'anneau.
+
+\end{definition}
+
+\subsection{Idéaux}
+
+\begin{definition}[idéal d'un anneau]
+    Soit $A$ un anneau. Un sous-ensemble $I \subset A$ est un idéal de A si:
+    \begin{itemize}
+        \item $(I, +)$ est un sous groupe de $(A, +)$
+        \item $\forall a \in A, \forall b \in I, ab = ba \in I$
+    \end{itemize}
+\end{definition}
+
+<lien avec les noyeaux de morphismes etc>
+
+\begin{definition}[idéal premier]
+    Soit $A$ un anneau, $I$ un idéal de $A$, $I$ est premier si et seulement si l'anneau $A/I$ est intègre.
+    Cela revient au même d'imposer:
+    \begin{itemize}
+        \item $A \neq I$
+        \item $\forall a, b \in A, ab \in I \Longrightarrow a \in I$ ou $ b \in I$
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[idéal maximal]
+    Un idéal $I$ de $A$ est dit maximal si $I \neq A$ et si pour tout idéal $J$ de $A$ tel que $I \subseteq J$ et $J \neq A$, on a $J = I$.
+    ($I$ est l'élément maximal pour l'inclusion)
+\end{definition}
+
+\begin{proposition}
+    Soit $I$ un idéal de $A$. On a donc:
+    \begin{center}
+        $I$ maximal $\Longleftrightarrow$ $A/I$ est un corps $\Longrightarrow$ $A/I$ intègre $\Longleftrightarrow$ $I$ premier
+    \end{center}
+\end{proposition}
