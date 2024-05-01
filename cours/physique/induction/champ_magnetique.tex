@@ -26,7 +26,7 @@
 
 \begin{proposition}[champ magnétique d'un fil]
     Pour un fil droit rectiligne infini parcourue par un courant $I$, le champ magnétique à une distance $r$ est donné par:
-    \[ \vec{B} = \frac{\mu_{0} I}{2\pi r} \vec{U_{\theta}}\]
+    \[ \vv{B} = \frac{\mu_{0} I}{2\pi r} \vv{U_{\theta}}\]
 \end{proposition}
 
 \begin{proposition}
@@ -34,11 +34,30 @@
     Dans un solénoide, le champ magnétique intérieur est constant et le champ magnétique extérieur est nul.
     On a la relation:
     \[\begin{array}{lcr}
-         \vec{B} = \mu_{0}n I \vec{U_{z}} & \text{où} & n = \frac{N}{L}
+         \vv{B} = \mu_{0}n I \vv{U_{z}} & \text{où} & n = \frac{N}{L}
     \end{array} \]
 \end{proposition}
 
-\subsection{chap 2}
+\subsection{Actions du champ magnétique}
+
+\begin{proposition}[force de Laplace élémentaire]
+    Soit un élément de courant, c'est-à-dire un fil conducteur de section $S$, de longueur $dl$, parcouru par le courant $i$ et plogné dans $\vv{B}$.
+    L'ensemble des charges mobiles dans le conducteur est soumis à la force de Laplace élémentaire:
+    \[ d\vv{F_{Lap}} = i d\vv{l} \wedge \vv{B} \]
+\end{proposition}
+
+\begin{proof}
+    TODO
+\end{proof}
+
+\begin{proposition}[couple magnétique]
+    Soit un moment magnétique $\vv{\mathscr{M}}$ placé dans le champ magnétique $\vv{B}$, alors le couple des actions du champ magnétique sur le moment magnétique est:
+    \[ \vv{\Gamma} = \vv{\mathscr{M}} \wedge \vv{B} \]
+\end{proposition}
+
+\begin{proposition}[effet d'orientation]
+    
+\end{proposition}
 
 force de laplace, rails, puissance
 
@@ -47,3 +66,74 @@ couple magnétique
 effet d'orientation, équilibre
 
 champ tournant, machine synchrone
+
+\subsection{Lois de l'induction}
+
+\begin{definition}[flux du champ magnétique]
+    Soit un contour orienté de vecteur surface $\vv{S}$ et placé dans le champ magnétique $\vv{B}$ homogène. On définit le flux du champ magnétique à travers la surface:
+    \[ \phi = \vv{B} \cdot \vv{S} \]
+    On exprime $\phi$ en Wb (Weber) et il est proportionel à $B$ et $S$.
+\end{definition}
+
+\begin{proposition}[Loi de Lenz-Faraday]
+    Soit un circuit electrique définissant une surface $\vv{S}$ et placée dans une zone de champ magnétique $\vv{B}$ uniforme.
+
+    La variation du flux magnétique $\phi$ engendre un phénomèune d'induction, c'est à dire l'apparition d'un couratn dans le circuit que produirait un générateur fictif de force electromotrice $e$ telle que:
+    \[ e = - \frac{d\phi}{dt} \]
+\end{proposition}
+
+L'induction revient donc à ajouter un générateur dans le circuit éléctrique. Ce générateur est toujours placé en convention générateur.
+
+Cela est lié aux principe de modération: l'effet s'oppose toujours à celui qui lui donne naissance.
+
+\begin{remark}
+    Pour avoir un effect d'induction, il faut que $\phi$ varie.
+\end{remark}
+
+%flux du champ magnétique en Weber
+
+%loi de faraday et implications
+
+%générateur d'induction
+
+%condition pour induction
+
+\subsection{Circuit fixe dans un champ magnétique uniforme}
+
+\subsubsection{Phenomène d'auto-induction}
+
+Soit un solénoide de $N$ spires et de longueur $l$. Il est parcouru par un champ magnétique $\vv{B}$.
+
+Soit une spire du solénoide parcourue par le courant $i$, de vecteur surface $\vv{S}$ et traversée par le champ magnétique $\vv{B}$. On a donc:
+\[ \phi_1 = \vv{B} \cdot \vv{S} \]
+
+\begin{definition}[flux propre]
+    Le flux propre de la bobine $\phi_p$ est le flux qui traverse l'ensemble des spires de la bobine. On a:
+    \[ \phi_p = N\phi_1 = NBS\]
+\end{definition}
+
+\begin{remark}
+    Si en plus, il existe un champ magnétique extérieur $\vv{B_{ext}}$, on a:
+    \[ \phi_{tot} = \phi_{p} + \phi_{ext} \]
+\end{remark}
+
+\begin{definition}[coefficient d'auto-inductance]
+    $\phi_p$ est proportionel à $i$. On définit $L$ l'auto-inductance de la bobine telle que:
+    \[ L = \frac{\phi_p}{i} \]
+    $L$ s'exprime en Henry (H).
+\end{definition}
+
+\begin{remark}
+    Dans le cas du solénoide, on a: $L = \frac{\mu_0 S N^2}{l}$
+\end{remark}
+
+\begin{proposition}[force electromotrice induite]
+    D'après la loi de Lenz-Faraday, la force electromotrice d'induction est donc: $e(t) = -L\frac{di}{dt}$.
+
+    Le generateur induit en convention générateur est donc équivalent à une bobine en convention recepteur.
+\end{proposition}
+
+
+TODO: Mutuelle inductance
+
+w
