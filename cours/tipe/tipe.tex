@@ -127,3 +127,70 @@ Soit E un ensemble et $\sim$ une relation sur E.
         $I$ maximal $\Longleftrightarrow$ $A/I$ est un corps $\Longrightarrow$ $A/I$ intègre $\Longleftrightarrow$ $I$ premier
     \end{center}
 \end{proposition}
+
+
+\section{Propriétés des anneaux}
+
+\begin{definition}{éléments associés}{}
+    Soit $A$ un anneau \underline{intègre}.
+    Deux éléments $a$ et $b$ de $A$ sont dits associés si $a$ divise $b$ et si $b$ divise $a$.
+\end{definition}
+
+Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux si et seulement si ils sont unitaire.
+
+\subsection{Notions d'idéaux}
+
+\subsection{Types d'anneaux}
+
+\subsubsection{Anneaux noethériens}
+
+On rappelle qu'on idéal $I$ d'un anneau $A$ est dit de type fini s'il est engendré par un nombre fini d'éléments.
+
+\begin{definition}{anneau noethérien}{}
+    Un anneau noethérien est un anneau qui vérifie l'une des trois propriété équivalentes suivantes:
+    \begin{enumerate}[(1)]
+        \item tout idéal de $A$ est de type fini
+        \item toute suite croissante $(I_n)_n$ d'idéaux de $A$ est stationnaire
+        \item tout ensemble non vide d'idéaux de $A$ a un élément maximal pour l'inclusion
+    \end{enumerate}
+\end{definition}
+
+\begin{proof} $\space$ \newline
+    $(1) \Rightarrow (2)$:
+    On défini une suite $(I_n)_n$ croissante et on pose $I = {\displaystyle \prod_{n \in \N}} I_n$.
+    Alors il existe $N \in \N$ tel que $I \subset I_N$. 
+    On a par définition de $I$: $I_N \subset I$.
+    Donc $I = I_n$ 
+    \newline
+    $(2) \Rightarrow (3)$: TODO
+    \newline
+    $(3) \Rightarrow (1)$: Pas compris
+
+\end{proof}
+
+\begin{theorem}{Hilbert}{}
+    Si $A$ est noethérien, $A[X]$ est noethérien.
+\end{theorem}
+
+\begin{corollary}{}{}
+    Si $A$ est noethérien, $A[X_1,\dots,X_n]$ est noethérien.
+\end{corollary}
+
+\subsubsection{Anneaux factoriels}
+
+La notion d'anneau factoriel généralsie la propriété de décomposition unique en facteurs premiers dans $\Z$.
+Il faut noter que toutes les propriétés de $\Z$ ne s'y applique pas forcément. 
+
+\begin{definition}{}{}
+    Soit $A$ un anneau. L'anneau $A$ est factoriel s'il vérifie ces trois propriétés:
+    \begin{enumerate}[(1)]
+        \item $A$ est intégre (il n'a pas de diviseur de zéro)
+        \item tout élément $a$ non nul de $A$ s'écrit $a = u p_1 \dots p_r$ avec $u \in A^\times$
+              et $p_1, \dots, p_r$ irréductible dans $A$
+        \item cette décomposition est unique, à permutation près et à des inversibles près:
+              si $a = u p_1 \dots p_r = v q_1 \dots q_s$, alors $r = s$ 
+              et il existe $\sigma \in \mathscr{S}_r$ tel que $p_i$ et $q_{\sigma(i)}$ soient associé
+    \end{enumerate}
+\end{definition}
+
+\subsubsection{Anneaux intégralement clos}
