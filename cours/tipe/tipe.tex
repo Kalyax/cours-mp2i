@@ -23,89 +23,87 @@ Projectif/Affine:?
 
 
 
-\section{Rappels: relations d'équivalence}
 
-Soit E un ensemble et $\sim$ une relation sur E.
-
-\begin{definition}{relation d'équivalence}{}
-    Une relation d'équivalence $\sim$ vérifie les propriétés suivantes sur E:
-    \begin{itemize}
-        \item $\sim$ réfléxive: $\forall x \in E, x \sim x$
-        \item $\sim$ symétrique
-        \item $\sim$ transitive
-    \end{itemize}
-\end{definition}
+\section{Ensemble quotient}
 
 \begin{definition}{classe d'équivalence}{}
-    Soit $x \in E$.
-    L'ensemble $\tilde{x} = \{y \in E, x \sim y\}$ est la classe d'équivalence de $x$.
+    Soit $R$ une relation d'équivalence sur un ensemble $E$.
+    Soit $x \in E$, on considère la partie $\tilde{x}$ de $E$ définie par:
+    \[ y \in \tilde{x} \Leftrightarrow x R y \]
+
+    \noindent
+    C'est la classe d'équivalence de $x$
 \end{definition}
+
+C'est l'ensemble des $y$ équivalent à $x$. Cette partie est non vide car $x \in \tilde{x}$.
 
 \begin{definition}{partition}{}
     Une partition d'un ensemble E est définie par:
-    \begin{itemize}
-        \item $\biguplus_{i \in I} X_{i} = X$
-        \item $\forall i \in I, X_{i} \neq \emptyset$
-        \item $\forall i,j \in I, i \neq j \Rightarrow X_{i} \cap X_{j} \neq \emptyset$
-    \end{itemize}
+    \begin{enumerate}[(a)]
+        \item l'union des classes d'équivalences donne $\displaystyle \biguplus_{x \in E} \tilde{x} = E$
+        \item $\forall x \in E, \tilde{x} \neq \emptyset$
+        \item $\forall x, y \in E, x \neq y \Rightarrow \tilde{x} \cap \tilde{y} \neq \emptyset$
+    \end{enumerate}
 \end{definition}
 
 \begin{lemma}{}{}
-    Soient $x,y \in E$. On a:
-    \[ x \sim y \Longleftrightarrow \title{x} = \title{y} \]
+    Soient $x, y \in E$. On a:
+    \[ x \sim y \Longleftrightarrow \tilde{x} = \tilde{y} \]
 \end{lemma}
 
-\begin{proof}
-    tkt
-\end{proof}
+On déduit que deux classes distinctes sont disjointes.
 
 \begin{theorem}{parition formée par les classes d'équivalence}{}
     L'ensemble des classes d'équivalences sous $\sim$ forme une parition de $E$.
 \end{theorem}
 
-\begin{proof}
-    
-\end{proof}
+Les différentes classes d'équivalence des éléments de $E$ sont des parties $E$, non vides, disjointes, dont la réunion donne E (d'après la définition d'une partition).
 
 \begin{definition}{ensemble quotient}{}
-    TODOf
+    L'ensemble des parties de $E$ dont les éléments sont des classes d'équivalence s'appelle l'ensemble quotient de $E$ par $R$,
+    noté $E/R$
 \end{definition}
 
-<application canonique>
+\begin{proposition}{application canonique}{}
+    Si $R$ est une relation d'équivalence, l'application \fonctionnd{\pi}{E}{E/R}
+    associe un élément $x$ de $E$ à sa classe d'équivalence.
+
+    Elle est surjective car chaque classe d'équivalence $F$ est non vide, tout élément de $F$ est envoyé par
+    $\pi$ sur $F$ (donc on a: $\forall x \in F, \pi(x) = F$)
+\end{proposition}
 
 
-\section{Anneaux}
 
-\subsection{Remarques}
 
-\begin{definition}{anneau quotient}{}
-    Soient $A$ un anneau et $I$ un idéal bilatère (idéal à gauche et à droite) de $A$.
-    On définit la relation d'équivalence $\mathscr{R}$ suivante:
 
-    \[ \forall x, y \in A, x \mathscr{R} y \Longleftrightarrow x - y \in I \]
 
-    On dit aussi alors que $x$ et $y$ sont congrus modulo $I$: $x \equiv y \mod I$
 
-    On peut munir l'ensemble quotient $A/I$ (càd l'ensemble des classes d'équivalence sur A) des lois induites par I:
-    \[ \begin{array}{lcr}
-        \fonction{+}{t}{a}{e}{f} & \text{et} & \fonction{\cdot}{t}{a}{e}{f}
-    \end{array} \]
 
-    $A/I$ est muni d'une structure d'anneau.
+\section{Propriétés des anneaux}
 
+\subsection{Définitions}
+
+\begin{definition}{éléments associés}{}
+    Soit $A$ un anneau \underline{intègre}.
+    Deux éléments $a$ et $b$ de $A$ sont dits associés si $a$ divise $b$ et si $b$ divise $a$.
 \end{definition}
 
-\subsection{Idéaux}
+Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux s'ils sont unitaire.
+
+<anneaux principaux>
+
+
+\subsection{Idéaux et anneau quotient}
+
+\subsubsection{Définitions}
 
 \begin{definition}{idéal d'un anneau}{}
     Soit $A$ un anneau. Un sous-ensemble $I \subset A$ est un idéal de A si:
-    \begin{itemize}
+    \begin{enumerate}[(a)]
         \item $(I, +)$ est un sous groupe de $(A, +)$
         \item $\forall a \in A, \forall b \in I, ab = ba \in I$
-    \end{itemize}
+    \end{enumerate}
 \end{definition}
-
-<lien avec les noyeaux de morphismes etc>
 
 \begin{definition}{idéal premier}{}
     Soit $A$ un anneau, $I$ un idéal de $A$, $I$ est premier si et seulement si l'anneau $A/I$ est intègre.
@@ -121,6 +119,10 @@ Soit E un ensemble et $\sim$ une relation sur E.
     ($I$ est l'élément maximal pour l'inclusion)
 \end{definition}
 
+
+
+\subsubsection{Propositions}
+
 \begin{proposition}{}{}
     Soit $I$ un idéal de $A$. On a donc:
     \begin{center}
@@ -128,17 +130,79 @@ Soit E un ensemble et $\sim$ une relation sur E.
     \end{center}
 \end{proposition}
 
+\begin{theorem}{lien idéaux et morphisme d'anneaux}{}
+    Une partie $I$ d'un anneau $A$ est un idéal bilatère si et seulement si $I$
+    est le noyau d'un morphisme d'anneaux.
+\end{theorem}
 
-\section{Propriétés des anneaux}
+\begin{proof}
+    TODO
+\end{proof}
 
-\begin{definition}{éléments associés}{}
-    Soit $A$ un anneau \underline{intègre}.
-    Deux éléments $a$ et $b$ de $A$ sont dits associés si $a$ divise $b$ et si $b$ divise $a$.
-\end{definition}
+\begin{proposition}{anneau quotient}{}
+    Soit $I$ un idéal bilatère d'un anneau $A$. La relation d'équivalence $R$ définie par:
+    \[ \forall x, y \in A, ~ x \mathscr{R} y \Longleftrightarrow x - y \in I \]
+    est compatible avec la structure d'anneau de $A$ et l'ensemble quotient $A/R$
+    aussi noté $A/I$ est muni d'une structure d'anneau.
+    \newline
 
-Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux si et seulement si ils sont unitaire.
+    On peut munir l'ensemble quotient $A/I$ (càd l'ensemble des classes d'équivalence sur A) des lois induites par I:
+    \[ \begin{array}{lcr}
+        \fonction{+}{t}{a}{e}{f} & \text{et} & \fonction{\cdot}{t}{a}{e}{f}
+    \end{array} \]
+\end{proposition}
 
-\subsection{Notions d'idéaux}
+<idéaux d'un anneau qotient>
+
+<image d'un idéal est un idéal par un morphisme?>
+
+<noyeau morphisme idéal?>
+
+\begin{lemma}{}{}
+    Soit $A$ un anneau, $A$ est un corps si et seulement si on a:
+    \begin{enumerate}[(1)]
+        \item $A \neq \{0\}$
+        \item les seuls idéaux de $A$ sont $\{0\}$ et $A$
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    TODO
+\end{proof}
+
+\begin{theorem}{Krull}{}
+    Soit $I$ un idéal de $A$, $I \neq A$, il existe un idéal maximal de $A$ contenant $I$.
+\end{theorem}
+
+\begin{proof}
+    Se montre à l'aide du théorème de Zorn, à voir.
+\end{proof}
+
+\subsection{Propriétés remaquables}
+
+\subsubsection{Théoreme d'isomorphisme}
+
+\begin{theorem}{théoreme d'isomorphisme}{}
+    Soient $A$ et $B$ deux anneaux et $\fonctionnd{f}{A}{B}$ un morphisme d'anneau.
+    On pose $I = \ker{f}$.
+
+    Soit $J$ un idéal de $A$ contenu dans $I$ et $\fonctionnd{\pi}{A}{A/J}$ la projection canonique. Alors on a:
+    \begin{enumerate}[(a)]
+        \item il existe une unique morphisme $\fonctionnd{\overline{f}}{A/J}{B}$ tel que $f = \overline{f} \circ \pi$
+                (on dit que $f$ se factorise par $A/J$)
+        \item $\overline{f}$ est injectif si et seulement si $J = I$
+        \item $\overline{f}$ est surjectif si et seulement $f$ l'est aussi
+    \end{enumerate}
+
+    En particulier on a $\Im{f} \simeq A/\ker{f}$.
+\end{theorem}
+
+\subsubsection{Opérations sur les idéaux}
+
+\subsubsection{Algèbres}
+
+
+
 
 \subsection{Types d'anneaux}
 
@@ -176,6 +240,9 @@ On rappelle qu'on idéal $I$ d'un anneau $A$ est dit de type fini s'il est engen
     Si $A$ est noethérien, $A[X_1,\dots,X_n]$ est noethérien.
 \end{corollary}
 
+
+
+
 \subsubsection{Anneaux factoriels}
 
 La notion d'anneau factoriel généralsie la propriété de décomposition unique en facteurs premiers dans $\Z$.
@@ -192,5 +259,8 @@ Il faut noter que toutes les propriétés de $\Z$ ne s'y applique pas forcément
               et il existe $\sigma \in \mathscr{S}_r$ tel que $p_i$ et $q_{\sigma(i)}$ soient associé
     \end{enumerate}
 \end{definition}
+
+
+
 
 \subsubsection{Anneaux intégralement clos}
