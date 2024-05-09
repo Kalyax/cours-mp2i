@@ -23,8 +23,39 @@ Projectif/Affine:?
 
 
 
+\section{Notions d'ensemble}
 
-\section{Ensemble quotient}
+\subsection{Définitions}
+
+\subsection{ZFC}
+
+\begin{definition}{ensemble inductif}{}
+    Soit $(E, \leqslant)$ un ensemble ordonné. On dit que $E$ est un ensemble inductif si pour tout sous-ensemble
+    $F \subset E$ totalement ordonné, $F$ admet un majorant dans $E$.
+\end{definition}
+
+On remarque alors que tout ensemble ordonné fini est inductif. 
+Cependant ce n'est pas le cas d'ensemble comme $\Z, \Q, \R, \dots$,
+on a bien $\N \subset \Z$ mais $\N$ n'admet aucun majorant dans $\Z$.
+
+\begin{theorem}{lemme de Zorn}{}
+    Tout ensemble inductif admet un élément maximal.
+\end{theorem}
+
+\begin{theorem}{axiome du choix}{}
+    
+\end{theorem}
+
+\begin{remark}{}{}
+    On a donc:
+    \[ \text{lemme de Zorn} \Longleftrightarrow \text{axiome du choix} \]
+\end{remark}
+
+<Pertinence de l'axiome du choix dans le cas d'un ensemble fini?>
+
+<TODO probleme 2 alain troesh>
+
+\subsection{Ensemble quotient}
 
 \begin{definition}{classe d'équivalence}{}
     Soit $R$ une relation d'équivalence sur un ensemble $E$.
