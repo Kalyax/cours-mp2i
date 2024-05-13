@@ -295,3 +295,36 @@ Il faut noter que toutes les propriétés de $\Z$ ne s'y applique pas forcément
 
 
 \subsubsection{Anneaux intégralement clos}
+
+\begin{definition}{élément entier}{}
+    Soit $B$ un anneau et $A$ un sous-anneau de $B$. On dit que $b \in B$ est entier sur $A$ s'il est racine d'un polynôme unitaire à cofficients dans $A$.
+    C'est à dire:
+    \[ b ~ \text{entier} \Longleftrightarrow \exists P \in A[X] ~ \text{unitaire}, ~ P(b) = 0 \]
+\end{definition}
+
+\begin{proposition}{anneau intégralement clos}{}
+    Soit $A$ un anneau intègre. Il est dit intégralement clos si les seuls éléments entier sur $A$ de son corps des fractions $Fr(A)$ sont les éléments de $A$.
+\end{proposition}
+
+\begin{proposition}{}{}
+    Tout anneau factoriel est intégralement clos.
+\end{proposition}
+
+\begin{proof}
+    Soit $A$ un anneau factoriel, donc $A$ intègre. \newline
+    Soit $x \in Fr(A)$ entier sur $A$. Alors il existe $a_0, \dots, a_{n-1} \in A$ tel que: 
+    \[x^n + a_{n-1}x^{n-1} + \cdots + a_0 = 0\]
+    On suppose par l'absurde que $x \notin A$. \newline
+    On pose donc $x = \frac{y}{z}$ avec $y \in A$, $z \in A \backslash \{0,1\}$ et $y \wedge z = 1$.
+    Donc:
+    \[ z^n P(\frac{y}{z}) = z^n \frac{y^n}{z^n} + a_{n-1} z^n \frac{y^{n-1}}{z^{n-1}} + \cdots + a_0 z^n = 0 \]
+    \[ z^n P(\frac{y}{z}) = y^n + a_{n-1} z y^{n-1} + \cdots + a_0 z^n = 0\]
+    \[ y^n = z (- a_{n-1} y^{n-1} - \cdots - a_0 z^n) \]
+    Or $z \nmid y^n$ car ils sont premier entre eux. Contradiction. Donc $x \in A$.
+\end{proof}
+
+\begin{example}{}{}
+    Soit $d \in \Z*$ un entier sans facteur carré et différent de 1. On a alors:
+    \[ d \equiv 1 [4] \Longrightarrow \Z[\sqrt{d}] ~ \text{non intégralement clos} \]
+    On pensera à la contraposée comme exemple d'anneau intégralement clos.
+\end{example}
