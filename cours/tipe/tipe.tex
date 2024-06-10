@@ -20,18 +20,31 @@ Dimension:?
 Projectif/Affine:?
 \mbox{}
 
+\newpage
+
 
 
 
 \section{Notions d'ensemble}
 
-\subsection{Définitions}
+\subsection{Relations d'ordre}
+
+\begin{remark}{}{}
+    Dans un ordre total, les notions d'élément maximal et de plus grand élément sont confondues (de même pour l'élément minimal et le plus petit élément)
+\end{remark}
+
+TODO: définition élément maximal et pge
+
 
 \subsection{ZFC}
 
+\begin{definition}{chaîne}{}
+    Une chaîne d'un ensemble partiellement ordonée est une partie sur laquelle l'ordre est total.
+\end{definition}
+
 \begin{definition}{ensemble inductif}{}
-    Soit $(E, \leqslant)$ un ensemble ordonné. On dit que $E$ est un ensemble inductif si pour tout sous-ensemble
-    $F \subset E$ totalement ordonné, $F$ admet un majorant dans $E$.
+    Soit $(E, \leqslant)$ un ensemble ordonné. On dit que $E$ est un ensemble inductif si toute partie
+    totalement ordonné (càd toute chaine) admet un majorant dans $E$.
 \end{definition}
 
 On remarque alors que tout ensemble ordonné fini est inductif. 
@@ -39,17 +52,86 @@ Cependant ce n'est pas le cas d'ensemble comme $\Z, \Q, \R, \dots$,
 on a bien $\N \subset \Z$ mais $\N$ n'admet aucun majorant dans $\Z$.
 
 \begin{theorem}{lemme de Zorn}{}
-    Tout ensemble inductif admet un élément maximal.
+    Tout ensemble non vide et inductif admet au moins un élément maximal.
+\end{theorem}
+
+\begin{definition}{bon ordre}{}
+    Un ensemble $E$ est bien ordonnée si toute partie non vide de $E$ admet un plus petit élément. 
+    
+    Toute relation d'ordre vérifiant cette propriété sur $E$ est un bon ordre.
+\end{definition}
+
+On remarque aussi qu'un bon ordre est forcément total. 
+Si on regarde une paire $\{a,b\}$ de $E$, on peut toujours comparer $a$ et $b$ car il y a un plus petit élément.
+
+\begin{theorem}{théorème de Zermelo}{}
+    Tout ensemble $E$ non vide, peut être bien ordonné.
 \end{theorem}
 
 \begin{theorem}{axiome du choix}{}
-    
+    Pour tout ensemble non vide $E$, il existe au moins une application $f$ de $\mathcal{P}(E)$ dans $E$ 
+    telle que $\forall A \subset E$, avec $A \neq \varnothing$, on ait $f(A) \in A$.
 \end{theorem}
 
+Donc $f$ est une ``fonction de choix'' qui permet de choisir un élément dans une partie de $E$ non vide.
+
+\begin{proposition}{}{}
+    Le lemme de Zorn, le théorème de Zermelo et l'axiome du choix sont équivalent.
+\end{proposition}
+
+\begin{proof}
+    Zermelo $\Longrightarrow$ Choix
+
+    Soit $E$ un ensemble non vide qu'on munit d'un bon ordre grâce au théorème de Zermelo.
+    Soit $A$ une partie non vide de $E$, alors elle admet un plus petit élément $a$.
+    On pose $f(A) = a$ tel qu'on a définit $\fonction{f}{ \mathcal{P}(E)\backslash \{ \varnothing \} }{E}{A}{a}$.
+
+    On peut ensuite définir $f(\varnothing)$ de manière quelconque pour avoir une fonction de choix $f$ sur $E$.
+    Par exemple on prends $f(\varnothing) = f(E)$.
+
+\end{proof}
+
+Si on veut maintenant justifier Zorn $\Longrightarrow$ Zermelo, on doit d'abord considérer les parties de $E$ que l'on peut munir d'un bon ordre, et montrer que leur ensemble est inductif.
+
+\begin{proposition}{}{}
+    Soit un ensemble non vide $E$, on considère $\mathcal{M}$ l'ensemble des couples $(A,O_A)$ où $A$ est une partie non vide de $E$ et $O_A$ un bon ordre sur $A$.
+\end{proposition}
+
 \begin{remark}{}{}
-    On a donc:
-    \[ \text{lemme de Zorn} \Longleftrightarrow \text{axiome du choix} \]
+    On a clairement $\mathcal{M} \neq \varnothing$ car si on prends une partie $A$ de cardinal fini $n$, 
+    alors il existe une bijection $\fonction{\varphi}{[1;n]}{A}{n}{a_n}$ (avec $a_1, \dots, a_n$ éléments distincts de $A$).
+
+    On peut ordonner $A$ par $O_A$ défini par $a_i O_A a_j \Longleftrightarrow i < j$: c'est un bon ordre car l'élément le plus petit d'une partie $A$ est associé à l'entier le plus petit.
 \end{remark}
+<TODO: remplacer les []>
+
+\begin{proposition}{}{}
+    On peut munir l'ensemble $\mathcal{M}$ de la relation d'ordre suivante:
+
+    \[ (A, O_A) \preccurlyeq (B, O_B) \Leftrightarrow \left\{
+        \begin{array}{ll}
+            A \subset B \\
+            O_A \text{ est la restriction de } O_B \text{ à } A^2 \\
+            A \text{ est partie héréditaire de } B
+        \end{array}
+    \right. \]
+
+\end{proposition}
+
+\begin{proof}
+    Exercice (cf Bernard Gaustiaux)
+\end{proof}
+
+<segment initial = partie héréditaire?>
+
+\begin{proposition}{}{}
+    L'ensemble $\mathcal{M}$, non vide, ainsi ordonné, est inductif.
+\end{proposition}
+
+\begin{proof}
+    TODO
+\end{proof}
+
 
 <Pertinence de l'axiome du choix dans le cas d'un ensemble fini?>
 
@@ -107,24 +189,10 @@ Les différentes classes d'équivalence des éléments de $E$ sont des parties $
 
 
 
+\newpage
 
 
-
-\section{Propriétés des anneaux}
-
-\subsection{Définitions}
-
-\begin{definition}{éléments associés}{}
-    Soit $A$ un anneau \underline{intègre}.
-    Deux éléments $a$ et $b$ de $A$ sont dits associés si $a$ divise $b$ et si $b$ divise $a$.
-\end{definition}
-
-Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux s'ils sont unitaire.
-
-<anneaux principaux>
-
-
-\subsection{Idéaux et anneau quotient}
+\section{Idéaux d'un anneau}
 
 \subsubsection{Définitions}
 
@@ -149,6 +217,23 @@ Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux s
     Un idéal $I$ de $A$ est dit maximal si $I \neq A$ et si pour tout idéal $J$ de $A$ tel que $I \subseteq J$ et $J \neq A$, on a $J = I$.
     ($I$ est l'élément maximal pour l'inclusion)
 \end{definition}
+
+
+
+\newpage
+
+\section{Propriétés des anneaux}
+
+\subsection{Définitions}
+
+\begin{definition}{éléments associés}{}
+    Soit $A$ un anneau \underline{intègre}.
+    Deux éléments $a$ et $b$ de $A$ sont dits associés si $a$ divise $b$ et si $b$ divise $a$.
+\end{definition}
+
+Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux s'ils sont unitaire.
+
+<anneaux principaux>
 
 
 
@@ -182,6 +267,15 @@ Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux s
         \fonction{+}{t}{a}{e}{f} & \text{et} & \fonction{\cdot}{t}{a}{e}{f}
     \end{array} \]
 \end{proposition}
+
+\begin{example}{}{}
+    \begin{itemize}
+        \item $A / A = \{0\}$ car il n'y a qu'une seule unique classe d'équivalence
+        \item $A / \{0\} = A$ car chaque classe d'équivalence ne possède qu'un seul élément de $A$
+    \end{itemize}
+\end{example}
+
+https://www.bibmath.net/ressources/justeunexo.php?id=1368
 
 <idéaux d'un anneau qotient>
 
@@ -328,3 +422,11 @@ Il faut noter que toutes les propriétés de $\Z$ ne s'y applique pas forcément
     \[ d \equiv 1 [4] \Longrightarrow \Z[\sqrt{d}] ~ \text{non intégralement clos} \]
     On pensera à la contraposée comme exemple d'anneau intégralement clos.
 \end{example}
+
+
+
+\newpage
+
+\section{Corps}
+
+\subsection{}

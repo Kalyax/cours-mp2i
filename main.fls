@@ -312,13 +312,13 @@ INPUT ./cours/tipe/tipe.tex
 INPUT ./cours/tipe/tipe.tex
 INPUT cours/tipe/tipe.tex
 INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr8.tfm
-INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /home/kalyax/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /home/kalyax/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /home/kalyax/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr8.tfm
+INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT /home/kalyax/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-mathex.enc
-INPUT /home/kalyax/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT main.aux
 INPUT ./cours/tipe/tipe.aux
 INPUT ./cours/tipe/tipe.aux
