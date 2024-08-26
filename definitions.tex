@@ -122,20 +122,6 @@
 
 %\newcommand{\produit}[1]{${\displaystyle \prod_{#1}^{#2}}$}
 
-\newtheoremstyle{customStyle}% 〈name〉
-{\topsep}% 〈Space above〉1
-{\topsep}% 〈Space below 〉1
-{}% 〈Body font〉
-{}% 〈Indent amount〉2
-{\bfseries}% 〈Theorem head font〉
-{\newline \bfseries}% 〈Punctuation after theorem head 〉
-{.5em}% 〈Space after theorem head 〉3
-{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
-
-\newcounter{num}
-\setcounter{num}{0}
-\theoremstyle{customStyle}
-
 \definecolor{theoremColor}{rgb}{0.8,0.2,0.2}
 \definecolor{lemmaColor}{rgb}{0.5,0.8,0.3}
 \definecolor{definitionColor}{rgb}{0.15,0.4,0.8}
@@ -147,29 +133,37 @@
         description delimiters parenthesis,
         label separator=-,
         th box/.style={
-          blanker, coltitle=black, fonttitle=\bfseries,
-          borderline west={2pt}{-0.5cm}{theoremColor, line cap=round},
+          blanker, coltitle=black, fonttitle=\scshape,
+          borderline west={2pt}{0cm}{theoremColor, line cap=round},
+          enlarge bottom by=9pt, left=0.5cm,
         },
         lem box/.style={
-          blanker, coltitle=black, fonttitle=\bfseries,
-          borderline west={2pt}{-0.5cm}{lemmaColor, line cap=round},
+          blanker, coltitle=black, fonttitle=\scshape,
+          borderline west={2pt}{0cm}{lemmaColor, line cap=round},
+          enlarge bottom by=9pt, left=0.5cm,
         },
         proposition box/.style={
-          blanker, coltitle=black, fonttitle=\bfseries,
-          borderline west={2pt}{-0.5cm}{propositionColor, line cap=round},
+          blanker, coltitle=black, fonttitle=\scshape,
+          borderline west={2pt}{0cm}{propositionColor, line cap=round},
+          enlarge bottom by=9pt, left=0.5cm,
         },
         definition box/.style={
-          blanker, coltitle=black, fonttitle=\bfseries,
-          borderline west={2pt}{-0.5cm}{definitionColor, line cap=round},
+          blanker, coltitle=black, fonttitle=\scshape,
+          borderline west={2pt}{0cm}{definitionColor, line cap=round},
+          enlarge bottom by=9pt, left=0.5cm,
         },
         corollary box/.style={
-          blanker, coltitle=black, fonttitle=\bfseries,
-          borderline west={2pt}{-0.5cm}{corollaryColor, line cap=round},
+          blanker, coltitle=black, fonttitle=\scshape,
+          borderline west={2pt}{0cm}{corollaryColor, line cap=round},
+          enlarge bottom by=9pt, left=0.5cm,
         },
         rare box/.style={
-          blanker, coltitle=black, fonttitle=\bfseries,
+          blanker, coltitle=black, fonttitle=\scshape,
+          enlarge bottom by=7pt, left=0.5cm,
         }
 }
+
+%\newtheorem{theorem}{Theoreme}
 
 \newtcbtheorem[]{theorem}{Théorème}{th box}{theorem}
 \newtcbtheorem[use counter from=theorem]{proposition}{Proposition}{proposition box}{proposition}

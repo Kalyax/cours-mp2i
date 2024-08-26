@@ -1,0 +1,273 @@
+\section{Anneaux et idéaux}
+
+\subsection{Définitions}
+
+On parle d'algèbre commutative, c'est à dire que les anneaux qu'on concidère sont
+commutatif pour la multiplication. On parelrai alors d'idéaux bilatères.
+
+\begin{definition}{idéal d'un anneau}{}
+    Soit $A$ un anneau. Un sous-ensemble $I \subset A$ est un idéal de A si:
+    \begin{enumerate}[(a)]
+        \item $(I, +)$ est un sous groupe de $(A, +)$
+        \item $\forall a \in A, \forall b \in I, ab = ba \in I$
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}{}{}
+    L'idéal engendré par une partie $S$ de $A$ correspond à l'intersection de tous les
+    idéaux de $A$ contenant $S$.
+\end{proposition}
+
+    
+Si $I$ et $J$ sont des idéaux, l'ensemble $\{i + j ~ | ~ i \in I, j \in J\}$ est un idéal,
+noté $I+J$. De même pour $IJ = \{ij ~ | ~ i \in I, j \in J\}$. 
+De même pour l'intersection $I \cap J$
+
+
+
+\subsection{Anneau quotient}
+
+\begin{definition}{anneau quotient}{}
+    Soit $I$ un idéal bilatère d'un anneau $A$. La relation d'équivalence $\mathcal{R}$ définie par:
+    \[ \forall x, y \in A, ~ x \mathcal{R} y \Longleftrightarrow x - y \in I \]
+    est compatible avec la structure d'anneau de $A$ et l'ensemble quotient $A/\mathcal{R}$
+    aussi noté $A/I$ est muni d'une structure d'anneau.
+\end{definition}
+
+\begin{example}{}{}
+    \begin{itemize}
+        \item $A / A = \{0\}$ car il n'y a qu'une seule unique classe d'équivalence
+        \item $A / \{0\} = A$ car chaque classe d'équivalence ne possède qu'un seul élément de $A$
+    \end{itemize}
+\end{example}
+
+
+\begin{proposition}{lien idéaux et morphisme d'anneaux}{}
+    Une partie $I$ d'un anneau $A$ est un idéal si et seulement si $I$
+    est le noyau d'un morphisme d'anneaux.
+\end{proposition}
+
+\begin{proof}
+    Si $I$ est un idéal de $A$, on conscidère le morphisme \fonction{\varphi}{A}{A/I}{a}{a + I}. \newline
+    Le noyau de $\varphi$ est égal à $I$ car si $x \in \ker(\varphi)$ alors $\varphi(x) = 0 = x + I$,
+    donc $x \in I$.
+    L'implication réciproque est claire.
+\end{proof}
+
+
+\begin{theorem}{bijection idéaux d'un anneau quotient}{}
+    Il existe un bijection entre les idéaux de $A/I$ et les idéaux de $A$ contenant $I$.\newline
+    Si on note $p$ la surjection canonique de $A$ dans $A/I$, 
+    alors l'application $J \mapsto p^{-1}(J)$ est cette bijection 
+    (où $J$ est un idéal de $A/I$).
+\end{theorem}
+
+
+
+\subsubsection{Théoreme d'isomorphisme}
+
+\begin{theorem}{théoreme d'isomorphisme}{}
+    Soient $A$ et $B$ deux anneaux et $\fonctionnd{f}{A}{B}$ un morphisme d'anneau.
+    On pose $I = \ker{f}$.
+
+    Soit $J$ un idéal de $A$ contenu dans $I$ et $\fonctionnd{\pi}{A}{A/J}$ la projection canonique. Alors on a:
+    \begin{enumerate}[(a)]
+        \item il existe une unique morphisme $\fonctionnd{\overline{f}}{A/J}{B}$ tel que $f = \overline{f} \circ \pi$
+                (on dit que $f$ se factorise par $A/J$)
+        \item $\overline{f}$ est injectif si et seulement si $J = I$
+        \item $\overline{f}$ est surjectif si et seulement $f$ l'est aussi
+    \end{enumerate}
+
+    En particulier on a $\Im{f} \simeq A/\ker{f}$.
+\end{theorem}
+
+
+
+https://www.bibmath.net/ressources/justeunexo.php?id=1368
+
+<idéaux d'un anneau qotient>
+
+<image d'un idéal est un idéal par un morphisme?>
+
+<noyeau morphisme idéal?>
+
+
+
+\subsection{Propriétés}
+
+\subsubsection{Idéaux premiers et maximaux}
+
+\begin{definition}{idéal premier}{}
+    Soit $A$ un anneau, $I$ un idéal de $A$, $I$ est premier si et seulement si l'anneau $A/I$ est intègre.
+    Cela revient au même d'imposer:
+    \begin{itemize}
+        \item $A \neq I$
+        \item $\forall a, b \in A, ab \in I \Longrightarrow a \in I$ ou $ b \in I$
+    \end{itemize}
+\end{definition}
+
+\begin{definition}{idéal maximal}{}
+    Un idéal $I$ de $A$ est dit maximal si $I \neq A$ et si pour tout idéal $J$ de $A$ tel que $I \subseteq J$ et $J \neq A$, on a $J = I$.
+    ($I$ est l'élément maximal pour l'inclusion)
+\end{definition}
+
+\begin{lemma}{}{}
+    Soit $A$ un anneau, $A$ est un corps si et seulement si on a:
+    \begin{enumerate}[(1)]
+        \item $A \neq \{0\}$
+        \item les seuls idéaux de $A$ sont $\{0\}$ et $A$
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Si on a (1) et (2), on prends $a \in A$ non nul de sorte que l'idéal $(a)$
+    soit non nul. On a donc $(a) = A$. Donc $1 \in (a)$. Donc il existe $x \in A$
+    tel que $ax = 1$. Donc $a$ inversible. Donc $A$ corps. \newline
+    Reciproquement, si $A$ est un corps et $I$ un idéal non nul. Alors on a $a^{-1}a = 1 \in I$.
+    Donc $I = A$ (car $I$ possède l'unité de $A$).
+\end{proof}
+
+\begin{proposition}{}{}
+    Soit $I$ un idéal de $A$. On a donc:
+    \begin{center}
+        $I$ maximal $\Longleftrightarrow$ $A/I$ est un corps $\Longrightarrow$ $A/I$ intègre $\Longleftrightarrow$ $I$ premier
+    \end{center}
+\end{proposition}
+
+\begin{proof}
+    TODO
+\end{proof}
+
+\subsubsection{Théorème des restes chinois}
+
+\begin{proposition}{produit cartésien d'idéaux}{}
+    Les idéaux de $A \times B$ sont de la forme $I \times J$ 
+    où $I$ et $J$ sont des idéaux de $A$ et $B$ respectivement. 
+\end{proposition}
+
+\begin{proposition}{idéaux premiers entre eux}{}
+    Soient $I$ et $J$ des idéaux de $A$. Ces idéaux sont premiers entre eux si $I + J = A$.
+    
+\end{proposition}
+
+\subsubsection{Théorème de Krull}
+
+\begin{theorem}{Krull}{}
+    Soit $I$ un idéal de $A$, $I \neq A$, il existe un idéal maximal de $A$ contenant $I$.
+\end{theorem}
+
+\begin{proof}
+    Se montre à l'aide du théorème de Zorn, à voir.
+\end{proof}
+
+
+
+
+\subsection{Types d'anneaux}
+
+\subsubsection{Anneaux noethériens}
+
+On rappelle qu'on idéal $I$ d'un anneau $A$ est dit de type fini s'il est engendré par un nombre fini d'éléments.
+
+\begin{definition}{anneau noethérien}{}
+    Un anneau noethérien est un anneau qui vérifie l'une des trois propriété équivalentes suivantes:
+    \begin{enumerate}[(1)]
+        \item tout idéal de $A$ est de type fini
+        \item toute suite croissante $(I_n)_n$ d'idéaux de $A$ est stationnaire
+        \item tout ensemble non vide d'idéaux de $A$ a un élément maximal pour l'inclusion
+    \end{enumerate}
+\end{definition}
+
+\begin{proof} $\space$ \newline
+    $(1) \Rightarrow (2)$:
+    On défini une suite $(I_n)_n$ croissante et on pose $I = {\displaystyle \prod_{n \in \N}} I_n$.
+    Alors il existe $N \in \N$ tel que $I \subset I_N$. 
+    On a par définition de $I$: $I_N \subset I$.
+    Donc $I = I_n$ 
+    \newline
+    $(2) \Rightarrow (3)$: 
+    Soit $E$ un ensemble non vide d'idéaux. On suppose par l'absurde que $E$ n'admet pas d'élément maximal.
+    On peut alors construire par récurrence une suite $(I_n)_n$ qui contredit $(2)$. D'ou le resultat.
+    \newline
+    $(3) \Rightarrow (1)$: Pas compris
+
+\end{proof}
+
+\begin{theorem}{Hilbert}{}
+    Si $A$ est noethérien, $A[X]$ est noethérien.
+\end{theorem}
+
+\begin{corollary}{}{}
+    Si $A$ est noethérien, $A[X_1,\dots,X_n]$ est noethérien.
+\end{corollary}
+
+
+
+
+\subsubsection{Anneaux factoriels}
+
+La notion d'anneau factoriel généralsie la propriété de décomposition unique en facteurs premiers dans $\Z$.
+Il faut noter que toutes les propriétés de $\Z$ ne s'y applique pas forcément. 
+
+\begin{definition}{}{}
+    Soit $A$ un anneau. L'anneau $A$ est factoriel s'il vérifie ces trois propriétés:
+    \begin{enumerate}[(1)]
+        \item $A$ est intégre (il n'a pas de diviseur de zéro)
+        \item tout élément $a$ non nul de $A$ s'écrit $a = u p_1 \dots p_r$ avec $u \in A^\times$
+              et $p_1, \dots, p_r$ irréductible dans $A$
+        \item cette décomposition est unique, à permutation près et à des inversibles près:
+              si $a = u p_1 \dots p_r = v q_1 \dots q_s$, alors $r = s$ 
+              et il existe $\sigma \in \mathscr{S}_r$ tel que $p_i$ et $q_{\sigma(i)}$ soient associé
+    \end{enumerate}
+\end{definition}
+
+
+
+
+\subsubsection{Anneaux intégralement clos}
+
+\begin{definition}{élément entier}{}
+    Soit $B$ un anneau et $A$ un sous-anneau de $B$. On dit que $b \in B$ est entier sur $A$ s'il est racine d'un polynôme unitaire à cofficients dans $A$.
+    C'est à dire:
+    \[ b ~ \text{entier} \Longleftrightarrow \exists P \in A[X] ~ \text{unitaire}, ~ P(b) = 0 \]
+\end{definition}
+
+\begin{proposition}{anneau intégralement clos}{}
+    Soit $A$ un anneau intègre. Il est dit intégralement clos si les seuls éléments entier sur $A$ de son corps des fractions $Fr(A)$ sont les éléments de $A$.
+\end{proposition}
+
+\begin{proposition}{}{}
+    Tout anneau factoriel est intégralement clos.
+\end{proposition}
+
+\begin{proof}
+    Soit $A$ un anneau factoriel, donc $A$ intègre. \newline
+    Soit $x \in Fr(A)$ entier sur $A$. Alors il existe $a_0, \dots, a_{n-1} \in A$ tel que: 
+    \[x^n + a_{n-1}x^{n-1} + \cdots + a_0 = 0\]
+    On suppose par l'absurde que $x \notin A$. \newline
+    On pose donc $x = \frac{y}{z}$ avec $y \in A$, $z \in A \backslash \{0,1\}$ et $y \wedge z = 1$.
+    Donc:
+    \[ z^n P(\frac{y}{z}) = z^n \frac{y^n}{z^n} + a_{n-1} z^n \frac{y^{n-1}}{z^{n-1}} + \cdots + a_0 z^n = 0 \]
+    \[ z^n P(\frac{y}{z}) = y^n + a_{n-1} z y^{n-1} + \cdots + a_0 z^n = 0\]
+    \[ y^n = z (- a_{n-1} y^{n-1} - \cdots - a_0 z^n) \]
+    Or $z \nmid y^n$ car ils sont premier entre eux. Contradiction. Donc $x \in A$.
+\end{proof}
+
+\begin{example}{}{}
+    Soit $d \in \Z*$ un entier sans facteur carré et différent de 1. On a alors:
+    \[ d \equiv 1 [4] \Longrightarrow \Z[\sqrt{d}] ~ \text{non intégralement clos} \]
+    On pensera à la contraposée comme exemple d'anneau intégralement clos.
+\end{example}
+
+
+
+\newpage
+
+\begin{definition}{éléments associés}{}
+    Soit $A$ un anneau \underline{intègre}.
+    Deux éléments $a$ et $b$ de $A$ sont dits associés si $a$ divise $b$ et si $b$ divise $a$.
+\end{definition}
+
+Par exemple, si on se place dans $\K[X]$, deux polynomes associés sont égaux s'ils sont unitaire.
+
+<anneaux principaux>
