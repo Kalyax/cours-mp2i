@@ -1,0 +1,16 @@
+\newcommand{\korps}{\textbf{k}}
+
+\section{Ensembles algébriques affines}
+
+On fixe un corps $\korps$ et un entier $n$. 
+On note $A$ l'anneau $\korps[X_1, \dots, X_n]$ des polynômes à n indéterminées à coefficients dans $\korps$.
+
+Si $P$ est un élément de $A$, on dit qu'un point $x = (x_1, \dots, x_n)$ 
+appartenant à $\korps^n$ est un \textit{zéro} de $P$ si $P(x_1, \dots, x_n) = 0$
+
+\begin{definition}{ensemble algébrique affine}{}
+    Soit $S$ une partie de $A$. On pose:
+    \[V(S) = \{x \in \korps^n ~ | ~ \forall P \in S, ~ P(x) = 0\}\]
+    et alors les $x \in V(S)$ sont les zéros communs à tout les polynômes de $S$.
+    On dit que $V(S)$ est l'ensemble algébrique affine défini par $S$.
+\end{definition}
