@@ -1,0 +1,56 @@
+\section{Séries numériques et vectorielles}
+
+\subsection{Définitions}
+
+\begin{proposition}{}{}
+    Une suite converge si et seulement si sa série téléscopique associée converge.
+    \[ \forall (u_n) \in \R^\N, ~~ (u_n) \text{ converge} ~~ \Longleftrightarrow ~~ \sum(u_{n+1} - u_n) \text{ converge} \]
+\end{proposition}
+
+\begin{enumerate}
+    \item Convergence d'une série (somme partielle et reste partiel)
+    \item opération sur les séries convergentes (c'est un $\K$ espace vectoriel)
+    \item Lien convergence suites/séries (téléscopique, terme général tends vers 0)
+\end{enumerate}
+
+\subsection{Séries réelles à termes positifs}
+
+
+\begin{proposition}{règle d'Alembert}{}
+    Soit $(u_n)$ une suite réelle strictement positive, telle que $\frac{u_{n+1}}{u_n} \longrightarrow l$
+    \begin{itemize}
+        \item si $l < 1$, la série $\sum u_n$ converge
+        \item si $l > 1$, la série $\sum u_n$ diverge
+        \item si $l = 1^+$, la série $\sum u_n$ diverge
+    \end{itemize}
+\end{proposition}
+\begin{enumerate}
+    \item Règles d'Alembert
+    \item Théorème de césaro
+    \item Comparaison avec des ingéalités
+    \item Comparaison avec des petit o ou grand O ou équivalent
+    \item Implication sur des séries (jsp comment écrire)
+    \item Comparaison série/intégrale
+\end{enumerate}
+
+
+\subsection{Séries absolument convergentes}
+\begin{enumerate}
+    \item En dimension finie, toute série absolument convergente est convergente
+    \item Résultats sur les sommations dans les relations de dominations ???
+    \item Produit de Cauchy
+\end{enumerate}
+
+
+\subsection{Séries alternées}
+\begin{enumerate}
+    \item CSSA
+\end{enumerate} 
+
+\subsection{Techniques randoms}
+\begin{enumerate}
+    \item quand on a un quotient $\frac{u_{n+1}}{u_n}$, passez au log pour faire des séries téléscopiques
+    \item pour trouver un équivalent à une suite, voire sa série, étudier la série de la forme $\frac{1}{u_{n+1}^\alpha} - \frac{1}{u_{n}^\alpha}$
+    \item quand on cherche l'équivalent $A_n$ d'une série à termes de signe non constant, on peut étudier la différence $u_n - A_n$
+    \item equivalent suites récurantes gourdon p229
+\end{enumerate}
